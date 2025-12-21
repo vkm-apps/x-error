@@ -17,7 +17,7 @@ It supports:
 ## 🚀 Installation
 
 ```
-composer require vkmapps/x-error
+composer require vkm-apps/x-error
 ```
 
 Laravel will auto‑discover the service provider.
