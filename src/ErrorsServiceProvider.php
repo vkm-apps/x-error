@@ -25,15 +25,20 @@ class ErrorsServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        // Register <x-error />
+        Blade::component('x-error::components.error', 'error');
+        
         // Load ALL package views (default layout + components)
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'x-error');
 
-        // Register <x-error />
-        Blade::component('x-error::components.error', 'error');
-
         // Load package translations
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'x-error');
-
+        
+        // Publish config file
+        $this->publishes([
+            __DIR__ . '/../config/x-error.php' => config_path('x-error.php')
+        ], 'x-error-config');
+        
         // Publish views
         $this->publishes([
             __DIR__ . '/../resources/views' => resource_path('views/vendor/x-error'),
