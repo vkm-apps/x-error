@@ -5,9 +5,9 @@
     'message' => null,
     'exception' => null,
     'color' => null,
-    'homeUrl' => '/',
-    'homeTitle' => __('Home'),
-    'homeBtn' => 'px-20 py-2 font-medium text-zinc-500 dark:text-zinc-500 border-2 border-zinc-400 dark:border-zinc-500 rounded-md shadow-sm hover:shadow-none hover:opacity-80',
+    'btnUrl' => '/',
+    'btnTitle' => 'Home',
+    'btnClass' => 'px-20 py-2 font-medium text-zinc-500 dark:text-zinc-500 border-2 border-zinc-400 dark:border-zinc-500 rounded-md shadow-sm hover:shadow-none hover:opacity-80',
 ])
 
 <div {{ $attributes->merge(['class' => 'w-full flex flex-col items-center justify-center gap-4 h-screen']) }}>
@@ -44,8 +44,8 @@
         </div>
 
         <div class="flex justify-center mt-8">
-            <a href="{{ $homeUrl }}" class="{{ $homeBtn }}">
-                {{ $homeTitle }}
+            <a href="{{ $btnUrl }}" class="{{ $btnClass }}">
+                {{ $btnTitle }}
             </a>
         </div>
     </div>
