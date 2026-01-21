@@ -2,16 +2,25 @@
 
 namespace VkmApps\XError;
 
-use Symfony\Component\HttpFoundation\Response;
 use Throwable;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Illuminate\Foundation\Exceptions\Handler as BaseHandler;
 
 class XErrorHandler extends BaseHandler
 {
     public function render($request, Throwable $e): Response
     {
-        // Only handle HTTP exceptions (404, 403, 500, etc.)
-        if (! method_exists($e, 'getStatusCode')) {
+        /**
+         * Normalize the exception FIRST
+         * (this converts route / model / auth exceptions into HTTP exceptions)
+         */
+        $e = $this->prepareException($e);
+
+        /**
+         * Only handle real HTTP exceptions
+         */
+        if (! $e instanceof HttpExceptionInterface) {
             return parent::render($request, $e);
         }
 
@@ -22,7 +31,8 @@ class XErrorHandler extends BaseHandler
         $color = config("x-error.colors.$code", config('x-error.colors.default'));
 
         $exception = null;
-        if (!auth()->check() && config('x-error.exception.enabled')) {
+
+        if (auth()->check() && config('x-error.exception.enabled')) {
 
             $permission = config('x-error.exception.permission');
 
@@ -35,8 +45,6 @@ class XErrorHandler extends BaseHandler
                 $exception = $e;
             }
         }
-
-
 
         return response()->view($view, [
             'code'      => $code,
