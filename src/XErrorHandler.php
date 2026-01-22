@@ -26,7 +26,7 @@ class XErrorHandler extends BaseHandler
 
         $code = $e->getStatusCode();
 
-        $view = config('x-error.layout_view') ?: 'x-error::error';
+        $view = config('x-error.layout') ?: 'x-error::error';
 
         $color = config("x-error.colors.$code", config('x-error.colors.default'));
 
