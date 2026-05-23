@@ -1,5 +1,5 @@
 @props([
-    'logo' => config('x-error.logo'),
+    'logo' => null,
     'code' => null,
     'title' => null,
     'message' => null,
@@ -40,7 +40,7 @@
         </div>
 
         @if($code != 503)
-            @if($button)
+            @if(isset($button))
                 {{ $button }}
             @elseif(config('x-error.button.url'))
                 <div class="flex justify-center mt-8">
