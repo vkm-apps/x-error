@@ -74,7 +74,7 @@ return [
         'message' => 'The server could not meet the expectations specified in your request.',
     ],
     '418' => [
-        'title' => 'Unsuported Request',
+        'title' => 'Unsupported Request',
         'message' => 'The server refuses to process this request as it is not supported. Please review your request and try again.',
     ],
     '419' => [

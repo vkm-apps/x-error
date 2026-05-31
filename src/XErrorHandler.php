@@ -5,25 +5,10 @@ namespace VkmApps\XError;
 use Throwable;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
-use Illuminate\Foundation\Exceptions\Handler as BaseHandler;
-
-class XErrorHandler extends BaseHandler
+class XErrorHandler
 {
-    public function render($request, Throwable $e): Response
+    public function render($request, HttpExceptionInterface $e): Response
     {
-        /**
-         * Normalize the exception FIRST
-         * (this converts route / model / auth exceptions into HTTP exceptions)
-         */
-        $e = $this->prepareException($e);
-
-        /**
-         * Only handle real HTTP exceptions
-         */
-        if (! $e instanceof HttpExceptionInterface) {
-            return parent::render($request, $e);
-        }
-
         $code = $e->getStatusCode();
 
         $view = config('x-error.layout') ?: 'x-error::error';
@@ -32,18 +17,32 @@ class XErrorHandler extends BaseHandler
 
         $exception = null;
 
-        if (auth()->check() && config('x-error.exception.enabled')) {
+        $showException = false;
 
-            $permission = config('x-error.exception.permission');
+        try {
+            if (config('x-error.exception.enabled') && auth()->check()) {
+                $permission = config('x-error.exception.permission');
 
-            // If no permission is required → show exception to all authenticated users
-            if (! $permission) {
-                $exception = $e;
+                // If no permission is required → show exception to all authenticated users
+                if (! $permission) {
+                    $showException = true;
+                }
+                // If permission is required → show exception only to users who have it
+                elseif (auth()->user()->can($permission)) {
+                    $showException = true;
+                }
             }
-            // If permission is required → show exception only to users who have it
-            elseif (auth()->user()->can($permission)) {
-                $exception = $e;
-            }
+        } catch (Throwable) {
+            // Suppress errors during session / database lookup failures (prevent WSOD loops)
+        }
+
+        // Show exception details in local/debug mode automatically
+        if (config('app.debug') && config('x-error.exception.enabled', true)) {
+            $showException = true;
+        }
+
+        if ($showException) {
+            $exception = $e;
         }
 
         return response()->view($view, [
