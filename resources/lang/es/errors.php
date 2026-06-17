@@ -62,7 +62,7 @@ return [
         'message' => 'La URL que solicitó es demasiado larga. Intente acortarla y vuelva a enviarla.',
     ],
     '415' => [
-        'title' => 'Tipo de Medio No Soportado',
+        'title' => 'Tipo de Medio No Admitido',
         'message' => 'El servidor no puede procesar este tipo de medio. Ajuste el formato de su solicitud.',
     ],
     '416' => [
@@ -74,7 +74,7 @@ return [
         'message' => 'El servidor no pudo cumplir con las expectativas especificadas en su solicitud. Revísela e inténtelo de nuevo.',
     ],
     '418' => [
-        'title' => 'Acción No Soportada',
+        'title' => 'Acción No Admitida',
         'message' => 'El servidor se niega a procesar esta solicitud porque no es compatible. Revise su solicitud e inténtelo de nuevo.',
     ],
     '419' => [
@@ -117,16 +117,24 @@ return [
         'title' => 'Cabeceras de Solicitud Muy Grandes',
         'message' => 'Su solicitud contiene cabeceras demasiado grandes para ser procesadas por el servidor. Reduzca el tamaño e inténtelo de nuevo.',
     ],
+    '444' => [
+        'title' => 'Conexión Cerrada',
+        'message' => 'El servidor cerró la conexión sin enviar una respuesta.',
+    ],
     '451' => [
         'title' => 'No Disponible por Razones Legales',
         'message' => 'El acceso a este contenido está restringido por motivos legales o regulatorios.',
+    ],
+    '499' => [
+        'title' => 'Cliente Cerró la Solicitud',
+        'message' => 'La conexión fue terminada por el cliente antes de que la solicitud pudiera completarse.',
     ],
     '500' => [
         'title' => 'Error del Servidor',
         'message' => 'Se produjo un error inesperado en el servidor. Intente de nuevo más tarde o contacte con soporte si el problema continúa.',
     ],
     '501' => [
-        'title' => 'No Soportado',
+        'title' => 'No Implementado',
         'message' => 'Esta funcionalidad no es compatible con el servidor.',
     ],
     '502' => [
@@ -139,10 +147,10 @@ return [
     ],
     '504' => [
         'title' => 'Tiempo de Espera de la Pasarela Agotado',
-        'message' => 'El servidor agotó el tiempo de espera mientras esperaba una respuesta. Inténtelo de nuevo más tarde.',
+        'message' => 'El servidor agotó el tiempo de espera mientras esperando una respuesta. Inténtelo de nuevo más tarde.',
     ],
     '505' => [
-        'title' => 'Versión HTTP No Soportada',
+        'title' => 'Versión HTTP No Admitida',
         'message' => 'El servidor no admite la versión HTTP utilizada en esta solicitud.',
     ],
     '506' => [
@@ -156,6 +164,10 @@ return [
     '508' => [
         'title' => 'Bucle Detectado',
         'message' => 'El servidor detectó un bucle infinito al procesar la solicitud.',
+    ],
+    '509' => [
+        'title' => 'Límite de Ancho de Banda Excedido',
+        'message' => 'Este sitio ha excedido su límite de ancho de banda asignado. Inténtelo de nuevo más tarde.',
     ],
     '510' => [
         'title' => 'Se Requieren Más Capacidades',

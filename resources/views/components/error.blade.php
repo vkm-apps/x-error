@@ -5,6 +5,7 @@
     'message' => null,
     'exception' => null,
     'color' => null,
+    'button' => null,
 ])
 
 <div
@@ -40,7 +41,7 @@
         </div>
 
         @if($code != 503)
-            @if(isset($button))
+            @if($button)
                 {{ $button }}
             @elseif(config('x-error.button.url'))
                 <div class="flex justify-center mt-8">

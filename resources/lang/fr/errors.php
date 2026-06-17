@@ -117,9 +117,17 @@ return [
         'title' => 'En-têtes de requête trop volumineux',
         'message' => 'Les en-têtes de votre requête sont trop volumineux. Veuillez réduire leur taille et réessayer.',
     ],
+    '444' => [
+        'title' => 'Connexion fermée',
+        'message' => 'Le serveur a fermé la connexion sans envoyer de réponse.',
+    ],
     '451' => [
         'title' => 'Indisponible pour des raisons légales',
         'message' => 'L’accès à cette ressource est restreint pour des raisons légales ou réglementaires.',
+    ],
+    '499' => [
+        'title' => 'Requête fermée par le client',
+        'message' => 'La connexion a été interrompue par le client avant la fin de la requête.',
     ],
     '500' => [
         'title' => 'Erreur serveur',
@@ -146,7 +154,7 @@ return [
         'message' => 'Le serveur ne prend pas en charge la version HTTP utilisée dans cette requête.',
     ],
     '506' => [
-        'title' => 'La variante négocie également',
+        'title' => 'Erreur de négociation de contenu',
         'message' => 'Le serveur a rencontré une erreur de configuration interne. Veuillez réessayer plus tard.',
     ],
     '507' => [
@@ -156,6 +164,10 @@ return [
     '508' => [
         'title' => 'Boucle détectée',
         'message' => 'Le serveur a détecté une boucle infinie lors du traitement de la requête.',
+    ],
+    '509' => [
+        'title' => 'Limite de bande passante dépassée',
+        'message' => 'Ce site a dépassé sa limite de bande passante allouée. Veuillez réessayer plus tard.',
     ],
     '510' => [
         'title' => 'Non étendu',

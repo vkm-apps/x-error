@@ -2,7 +2,7 @@
 
 return [
 
-    // Custom layout view (must manually include <x-error /> component)
+    // Custom layout view (must manually include <x-vkm-error /> component)
     'layout' => null,
 
     // Controls who can view exception details

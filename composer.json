@@ -1,12 +1,15 @@
 {
     "name": "vkm-apps/x-error",
-    "description": "A Laravel package providing multilingual error pages and a reusable <x-error> Blade component.",
+    "description": "A Laravel package providing multilingual error pages.",
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/vkm-apps/x-error",
     "authors": [
         {
             "name": "Vasilis Milopoulos",
-            "email": "vasilis.milopoulos@gmail.com"
+            "email": "vasilis.milopoulos@gmail.com",
+            "homepage": "https://github.com/vkm-apps",
+            "role": "Developer"
         }
     ],
     "keywords": [
@@ -14,20 +17,29 @@
         "blade",
         "component",
         "blade-component",
-        "error pages",
+        "error-pages",
         "multilingual",
         "localization",
         "i18n",
         "frontend",
-        "http errors"
+        "http-errors",
+        "laravel-package"
     ],
-
+    "support": {
+        "issues": "https://github.com/vkm-apps/x-error/issues",
+        "source": "https://github.com/vkm-apps/x-error"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/vkm-apps"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "VkmApps\\XError\\": "src/"
         }
     },
-
     "extra": {
         "laravel": {
             "providers": [
@@ -35,12 +47,10 @@
             ]
         }
     },
-
     "require": {
         "php": "^8.1",
         "illuminate/support": "^10.0|^11.0|^12.0|^13.0"
     },
-
     "minimum-stability": "dev",
     "prefer-stable": true
 }

@@ -7,9 +7,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 class XErrorHandler
 {
-    public function render($request, HttpExceptionInterface $e): Response
+    public function render($request, Throwable $e, ?int $statusCode = null): Response
     {
-        $code = $e->getStatusCode();
+        $code = $statusCode ?? ($e instanceof HttpExceptionInterface ? $e->getStatusCode() : 500);
 
         $view = config('x-error.layout') ?: 'x-error::error';
 
@@ -42,13 +42,33 @@ class XErrorHandler
         }
 
         if ($showException) {
-            $exception = $e;
+            if (config('app.debug')) {
+                $exception = $e;
+            } else {
+                // In production, only show basic details (class, message, file, line) to avoid leaking credentials/passwords
+                $exception = sprintf(
+                    "[%s] %s\n\nFile: %s\nLine: %d",
+                    get_class($e),
+                    $e->getMessage(),
+                    $e->getFile(),
+                    $e->getLine()
+                );
+            }
+        }
+
+        $titleKey = "x-error::errors.$code.title";
+        $messageKey = "x-error::errors.$code.message";
+
+        if (! \Illuminate\Support\Facades\Lang::has($titleKey)) {
+            $fallbackCode = str_starts_with((string)$code, '4') ? 400 : 500;
+            $titleKey = "x-error::errors.$fallbackCode.title";
+            $messageKey = "x-error::errors.$fallbackCode.message";
         }
 
         return response()->view($view, [
             'code'      => $code,
-            'title'     => __("x-error::errors.$code.title"),
-            'message'   => __("x-error::errors.$code.message"),
+            'title'     => __($titleKey),
+            'message'   => __($messageKey),
             'color'     => $color,
             'exception' => $exception,
         ], $code);

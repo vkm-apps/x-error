@@ -114,12 +114,20 @@ return [
         'message' => 'Você enviou muitas requisições em um curto período. Aguarde um momento e tente novamente.',
     ],
     '431' => [
-        'title' => 'Campos de Cabeçalho da Requisição Muito Grandes',
+        'title' => 'Cabeçalhos de Requisição Muito Grandes',
         'message' => 'Os cabeçalhos da sua requisição são muito grandes. Reduza o tamanho e tente novamente.',
+    ],
+    '444' => [
+        'title' => 'Conexão Fechada',
+        'message' => 'O servidor fechou a conexão sem enviar uma resposta.',
     ],
     '451' => [
         'title' => 'Indisponível por Motivos Legais',
         'message' => 'O acesso a este recurso está restrito por motivos legais ou regulatórios.',
+    ],
+    '499' => [
+        'title' => 'Cliente Fechou a Requisição',
+        'message' => 'A conexão foi encerrada pelo cliente antes que a requisição pudesse ser concluída.',
     ],
     '500' => [
         'title' => 'Erro do Servidor',
@@ -130,7 +138,7 @@ return [
         'message' => 'Esta funcionalidade não é suportada pelo servidor.',
     ],
     '502' => [
-        'title' => 'Gateway Ruim',
+        'title' => 'Erro de Gateway',
         'message' => 'O servidor recebeu uma resposta inválida de um servidor upstream. Tente novamente.',
     ],
     '503' => [
@@ -146,7 +154,7 @@ return [
         'message' => 'O servidor não suporta a versão HTTP usada nesta requisição.',
     ],
     '506' => [
-        'title' => 'Variante Também Negocia',
+        'title' => 'Erro de Negociação de Conteúdo',
         'message' => 'O servidor encontrou um erro de configuração interna. Tente novamente mais tarde.',
     ],
     '507' => [
@@ -156,6 +164,10 @@ return [
     '508' => [
         'title' => 'Loop Detectado',
         'message' => 'O servidor detectou um loop infinito ao processar a requisição.',
+    ],
+    '509' => [
+        'title' => 'Limite de Largura de Banda Excedido',
+        'message' => 'Este site excedeu o limite de largura de banda alocado. Tente novamente mais tarde.',
     ],
     '510' => [
         'title' => 'Não Estendido',

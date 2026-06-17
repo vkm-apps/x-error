@@ -117,9 +117,17 @@ return [
         'title' => 'Anfrage-Header zu groß',
         'message' => 'Die Header Ihrer Anfrage sind zu groß. Bitte reduzieren Sie die Größe der Daten und versuchen Sie es erneut.',
     ],
+    '444' => [
+        'title' => 'Verbindung geschlossen',
+        'message' => 'Der Server hat die Verbindung ohne Rückmeldung geschlossen.',
+    ],
     '451' => [
         'title' => 'Aus rechtlichen Gründen nicht verfügbar',
         'message' => 'Der Zugriff auf diesen Inhalt ist aus rechtlichen oder regulatorischen Gründen eingeschränkt.',
+    ],
+    '499' => [
+        'title' => 'Client hat die Anfrage abgebrochen',
+        'message' => 'Die Verbindung wurde vom Client abgebrochen, bevor die Anfrage abgeschlossen werden konnte.',
     ],
     '500' => [
         'title' => 'Serverfehler',
@@ -156,6 +164,10 @@ return [
     '508' => [
         'title' => 'Endlosschleife entdeckt',
         'message' => 'Der Server hat eine Endlosschleife während der Verarbeitung der Anfrage erkannt.',
+    ],
+    '509' => [
+        'title' => 'Bandbreitengrenze überschritten',
+        'message' => 'Diese Website hat das ihr zugewiesene Bandbreitenlimit überschritten. Bitte versuchen Sie es später erneut.',
     ],
     '510' => [
         'title' => 'Zusätzliche Funktionen erforderlich',

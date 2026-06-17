@@ -117,9 +117,17 @@ return [
         'title' => 'Request Header Fields Too Large',
         'message' => 'The headers of your request are too large. Please reduce the size and try again.',
     ],
+    '444' => [
+        'title' => 'Connection Closed',
+        'message' => 'The server closed the connection without sending a response.',
+    ],
     '451' => [
         'title' => 'Unavailable For Legal Reasons',
         'message' => 'Access to this resource is restricted due to legal or regulatory reasons.',
+    ],
+    '499' => [
+        'title' => 'Client Closed Request',
+        'message' => 'The connection was terminated by the client before the request could complete.',
     ],
     '500' => [
         'title' => 'Server Error',
@@ -156,6 +164,10 @@ return [
     '508' => [
         'title' => 'Loop Detected',
         'message' => 'The server detected an infinite loop while processing the request.',
+    ],
+    '509' => [
+        'title' => 'Bandwidth Limit Exceeded',
+        'message' => 'This site has exceeded its allocated bandwidth limit. Please try again later.',
     ],
     '510' => [
         'title' => 'Not Extended',

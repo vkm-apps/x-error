@@ -117,9 +117,17 @@ return [
         'title' => 'Intestazioni di Richiesta Troppo Grandi',
         'message' => 'La tua richiesta contiene intestazioni troppo grandi per essere elaborate dal server. Riduci la dimensione dei dati e riprova.',
     ],
+    '444' => [
+        'title' => 'Connessione Chiusa',
+        'message' => 'Il server ha chiuso la connessione senza inviare alcuna risposta.',
+    ],
     '451' => [
         'title' => 'Non Disponibile per Motivi Legali',
         'message' => 'L\'accesso a questo contenuto è limitato per motivi legali o normativi.',
+    ],
+    '499' => [
+        'title' => 'Richiesta Chiusa dal Client',
+        'message' => 'La connessione è stata interrotta dal client prima che la richiesta potesse essere completata.',
     ],
     '500' => [
         'title' => 'Errore del Server',
@@ -131,7 +139,7 @@ return [
     ],
     '502' => [
         'title' => 'Errore Gateway',
-        'message' => 'Il server ha ricevuto una risposta non valida da un server a monte. Riprova.',
+        'message' => 'Il server ha ricevuto una resposta non valida da un server a monte. Riprova.',
     ],
     '503' => [
         'title' => 'Servizio Non Disponibile',
@@ -156,6 +164,10 @@ return [
     '508' => [
         'title' => 'Rilevato Ciclo',
         'message' => 'Il server ha rilevato un ciclo infinito durante l\'elaborazione della richiesta.',
+    ],
+    '509' => [
+        'title' => 'Limite di Banda Superato',
+        'message' => 'Questo sito ha superato il limite di larghezza di banda assegnato. Riprova più tardi.',
     ],
     '510' => [
         'title' => 'Ulteriori Capacità Richieste',

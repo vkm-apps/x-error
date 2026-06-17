@@ -114,12 +114,20 @@ return [
         'message' => 'Kısa süre içinde çok fazla istek gönderdiniz. Lütfen biraz bekleyip tekrar deneyin.',
     ],
     '431' => [
-        'title' => 'İstek Başlık Alanları Çok Büyük',
-        'message' => 'İstek başlıklarınız çok büyük. Lütfen boyutu azaltıp tekrar deneyin.',
+        'title' => 'İstek Başlığı Alanları Çok Büyük',
+        'message' => 'İsteğinizin başlıkları çok büyük. Lütfen boyutu küçültüp tekrar deneyin.',
+    ],
+    '444' => [
+        'title' => 'Bağlantı Kapatıldı',
+        'message' => 'Sunucu, herhangi bir yanıt göndermeden bağlantıyı kapattı.',
     ],
     '451' => [
         'title' => 'Hukuki Sebeplerle Kullanılamıyor',
         'message' => 'Bu kaynağa erişim, hukuki veya düzenleyici sebeplerle kısıtlanmıştır.',
+    ],
+    '499' => [
+        'title' => 'İstemci İsteği Kapattı',
+        'message' => 'İstek tamamlanamadan bağlantı istemci tarafından sonlandırıldı.',
     ],
     '500' => [
         'title' => 'Sunucu Hatası',
@@ -146,7 +154,7 @@ return [
         'message' => 'Sunucu, bu istekte kullanılan HTTP sürümünü desteklemiyor.',
     ],
     '506' => [
-        'title' => 'Varyant da Müzakere Ediyor',
+        'title' => 'İçerik Anlaşması Hatası',
         'message' => 'Sunucu iç yapılandırma hatasıyla karşılaştı. Lütfen daha sonra tekrar deneyin.',
     ],
     '507' => [
@@ -156,6 +164,10 @@ return [
     '508' => [
         'title' => 'Döngü Algılandı',
         'message' => 'Sunucu isteği işlerken sonsuz bir döngü tespit etti.',
+    ],
+    '509' => [
+        'title' => 'Bant Genişliği Sınırı Aşıldı',
+        'message' => 'Bu sitenin kendisine ayrılan bant genişliği sınırı aşıldı. Lütfen daha sonra tekrar deneyin.',
     ],
     '510' => [
         'title' => 'Genişletilmedi',
