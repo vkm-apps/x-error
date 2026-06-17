@@ -35,19 +35,15 @@ class ErrorsServiceProvider extends ServiceProvider
                 if ($request->expectsJson()) {
                     return null;
                 }
-
-                $renderer = new XErrorHandler();
-
-                if ($e instanceof \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface) {
-                    return $renderer->render($request, $e);
+            
+                if (! $e instanceof \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface) {
+                    return null;
                 }
-
-                // In production, render all other exceptions as a 500 error page
+            
                 if (! config('app.debug')) {
-                    $httpException = new \Symfony\Component\HttpKernel\Exception\HttpException(500, $e->getMessage(), $e);
-                    return $renderer->render($request, $httpException);
+                    return (new XErrorHandler())->render($request, $e);
                 }
-
+            
                 return null;
             });
         }
