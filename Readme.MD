@@ -1,5 +1,10 @@
 # X-Error
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/vkm-apps/x-error.svg?style=flat-square)](https://packagist.org/packages/vkm-apps/x-error)
+[![Total Downloads](https://img.shields.io/packagist/dt/vkm-apps/x-error.svg?style=flat-square)](https://packagist.org/packages/vkm-apps/x-error)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+
+
 A clean, customizable, and developer-friendly error page system for Laravel.
 
 X-Error replaces Laravel’s default error pages with a polished, fully-responsive UI featuring automatic dark mode, detailed (and secure) exception inspector, and comprehensive localization support — while remaining completely unobtrusive.
