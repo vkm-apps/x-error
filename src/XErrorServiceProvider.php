@@ -10,7 +10,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
-class ErrorsServiceProvider extends ServiceProvider
+class XErrorServiceProvider extends ServiceProvider
 {
     public function register(): void
     {

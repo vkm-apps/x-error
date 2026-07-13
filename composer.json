@@ -43,7 +43,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VkmApps\\XError\\ErrorsServiceProvider"
+                "VkmApps\\XError\\XErrorServiceProvider"
             ]
         }
     },
